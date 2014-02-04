@@ -14,6 +14,7 @@ The library encodes and decodes base64 to and from ArrayBuffers
  - __decode(str)__ - Decodes base64 string to `ArrayBuffer`
 
 ## Release History
+0.1.1 - Fix old format of typed arrays
 0.1.0 - Initial version, basic decode/encode base64 to and from ArrayBuffer
 
 ## License
