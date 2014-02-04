@@ -1,5 +1,7 @@
 # base64-arraybuffer
 
+[![Build Status](https://travis-ci.org/niklasvh/base64-arraybuffer.png)](https://travis-ci.org/niklasvh/base64-arraybuffer)
+
 Encode/decode base64 data into ArrayBuffers
 
 ## Getting Started
