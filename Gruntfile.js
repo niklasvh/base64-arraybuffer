@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   "use strict";
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:package.json>',
+    pkg: grunt.file.readJSON('package.json'),
     nodeunit: {
       all: ['test/**/*.js']
     },
@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
     },
     watch: {
-      files: '<config:lint.files>',
+      files: '<%= lint.files %>',
       tasks: 'default'
     },
     jshint: {
