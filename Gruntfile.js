@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       all: ['test/**/*.js']
     },
     lint: {
-      files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
+      files: ['Gruntfile.js', 'lib/**/*.js', 'test/**/*.js']
     },
     watch: {
       files: '<%= lint.files %>',
@@ -25,15 +25,17 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        node: true
+        node: true,
+        globals: {
+          exports: true
+        }
       },
-      globals: {
-        exports: true
-      }
+      all: '<%= lint.files %>'
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   // Default task.
   grunt.registerTask('default', 'nodeunit');
 
