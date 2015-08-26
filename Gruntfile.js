@@ -3,8 +3,8 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
-    test: {
-      files: ['test/**/*.js']
+    nodeunit: {
+      all: ['test/**/*.js']
     },
     lint: {
       files: ['grunt.js', 'lib/**/*.js', 'test/**/*.js']
@@ -33,7 +33,8 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-nodeunit');
   // Default task.
-  grunt.registerTask('default', 'test');
+  grunt.registerTask('default', 'nodeunit');
 
 };
