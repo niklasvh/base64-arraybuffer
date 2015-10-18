@@ -35,16 +35,17 @@
   }
 
   function testArrayBuffers(buffer1, buffer2) {
-    var len1 = buffer1.byteLength,
-    len2 = buffer2.byteLength;
+    var len1 = buffer1.byteLength;
+    var len2 = buffer2.byteLength;
+    var view1 = new Uint8Array(buffer1);
+    var view2 = new Uint8Array(buffer2);
+
     if (len1 !== len2) {
-      console.log(buffer1, buffer2);
       return false;
     }
 
     for (var i = 0; i < len1; i++) {
-      if (buffer1[i] !== buffer1[i]) {
-        console.log(i, buffer1, buffer2);
+      if (!view1[i] || view1[i] !== view2[i]) {
         return false;
       }
     }
