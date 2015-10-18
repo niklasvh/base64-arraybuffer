@@ -1,10 +1,19 @@
 ---
 language: node_js
 node_js:
-- '0.10'
 - '0.12'
 - 'iojs-1'
 - 'iojs-2'
 - 'iojs-3'
+- '4.1'
 before_script:
 - npm install
+deploy:
+  - provider: npm
+    email: niklasvh@gmail.com
+    api_key:
+      secure: G/Szpr8q4/D6hp+H/Z9yyluUXtHAwf7LLa1Y07X59/Enlj1h7V5fQ7AW4/iAVM3XbIsrCPWR3dJU9g/ZxpxFg4OovIHVpS2Jr/mahtPYWdHR3pWuSmMW8QD+Twnq2VAFwSgg5Oumq3QxhX3YbCOnZox6+6Uviqk8FO7Z5B0RwW4=
+    on:
+      tags: true
+      branch: master
+      repo: niklasvh/base64-arraybuffer
