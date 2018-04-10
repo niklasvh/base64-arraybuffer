@@ -34,6 +34,14 @@
     return buffer;
   }
 
+  function rangeArrayBuffer() {
+    var buffer = new ArrayBuffer(256);
+    var bytes = new Uint8Array(buffer);
+    for (var i = 0; i < 256; i++)
+      bytes[i] = i
+    return buffer;
+  }
+
   function testArrayBuffers(buffer1, buffer2) {
     var len1 = buffer1.byteLength;
     var len2 = buffer2.byteLength;
@@ -45,7 +53,7 @@
     }
 
     for (var i = 0; i < len1; i++) {
-      if (!view1[i] || view1[i] !== view2[i]) {
+      if (view1[i] === void 0 || view1[i] !== view2[i]) {
         return false;
       }
     }
@@ -54,19 +62,21 @@
 
   exports['base64tests'] = {
     'encode': function(test) {
-      test.expect(4);
+      test.expect(5);
 
       test.equal(base64_arraybuffer.encode(stringArrayBuffer("Hello world")), "SGVsbG8gd29ybGQ=", 'encode "Hello world"');
       test.equal(base64_arraybuffer.encode(stringArrayBuffer("Man")), 'TWFu', 'encode "Man"');
       test.equal(base64_arraybuffer.encode(stringArrayBuffer("Ma")), "TWE=", 'encode "Ma"');
       test.equal(base64_arraybuffer.encode(stringArrayBuffer("Hello worlds!")), "SGVsbG8gd29ybGRzIQ==", 'encode "Hello worlds!"');
+      test.equal(base64_arraybuffer.encode(rangeArrayBuffer()), "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w==", 'encode all binary characters');
       test.done();
     },
     'decode': function(test) {
-      test.expect(3);
+      test.expect(4);
       test.ok(testArrayBuffers(base64_arraybuffer.decode("TWFu"), stringArrayBuffer("Man")), 'decode "Man"');
       test.ok(testArrayBuffers(base64_arraybuffer.decode("SGVsbG8gd29ybGQ="), stringArrayBuffer("Hello world")), 'decode "Hello world"');
       test.ok(testArrayBuffers(base64_arraybuffer.decode("SGVsbG8gd29ybGRzIQ=="), stringArrayBuffer("Hello worlds!")), 'decode "Hello worlds!"');
+      test.ok(testArrayBuffers(base64_arraybuffer.decode("AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w=="), rangeArrayBuffer()), 'decode all binary characters');
       test.done();
     }
   };
