@@ -7,7 +7,6 @@ node_js:
 - '4.1'
 before_script:
 - npm install
-before_install: npm install -g npm@'>=2.13.5'
 deploy:
   provider: npm
   email: niklasvh@gmail.com
