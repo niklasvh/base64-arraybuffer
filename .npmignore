@@ -1,3 +1,4 @@
 /node_modules/
-Gruntfile.js
+package-lock.json
+.travis.yml
 /test/

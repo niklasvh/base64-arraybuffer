@@ -6,7 +6,7 @@
   "author": {
     "name": "Niklas von Hertzen",
     "email": "niklasvh@gmail.com",
-    "url": "http://hertzen.com"
+    "url": "https://hertzen.com"
   },
   "repository": {
     "type": "git",
@@ -26,14 +26,10 @@
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "mocha test"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-watch": "^0.6.1"
+    "mocha": "^6.1.4"
   },
   "keywords": []
 }
