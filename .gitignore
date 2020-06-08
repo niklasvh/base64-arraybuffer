@@ -1,5 +1,6 @@
+/dist
 /nbproject
-node_modules/
+/node_modules/
 *.idea
 *.iml
 test/

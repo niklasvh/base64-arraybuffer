@@ -1,5 +1,5 @@
 const {equal, ok} = require('assert');
-const {encode, decode} = require('../lib/base64-arraybuffer.js');
+const {encode, decode} = require('..');
 
 function stringArrayBuffer(str) {
   const buffer = new ArrayBuffer(str.length);
