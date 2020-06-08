@@ -1,30 +1,30 @@
 {
   "name": "base64-arraybuffer",
   "description": "Encode/decode base64 data into ArrayBuffers",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/niklasvh/base64-arraybuffer",
   "author": {
     "name": "Niklas von Hertzen",
     "email": "niklasvh@gmail.com",
     "url": "https://hertzen.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/niklasvh/base64-arraybuffer"
-  },
-  "bugs": {
-    "url": "https://github.com/niklasvh/base64-arraybuffer/issues"
-  },
+  "repository": "https://github.com/niklasvh/base64-arraybuffer",
+  "bugs": "https://github.com/niklasvh/base64-arraybuffer/issues",
   "license": "MIT",
-  "main": "lib/base64-arraybuffer",
+  "main": "dist/base64-arraybuffer.js",
+  "module": "dist/base64-arraybuffer.mjs",
+  "types": "lib/base64-arraybuffer.d.ts",
   "engines": {
     "node": ">= 0.6.0"
   },
   "scripts": {
-    "test": "mocha test"
+    "build": "rollup -c rollup.config.js",
+    "prepare": "npm run build",
+    "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "rollup": "^2.15.0"
   },
   "keywords": []
 }

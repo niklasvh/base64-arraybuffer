@@ -1,4 +1,6 @@
 /node_modules/
+.gitignore
 package-lock.json
-.travis.yml
+rollup.config.js
 /test/
+.travis.yml
