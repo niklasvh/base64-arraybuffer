@@ -6,14 +6,21 @@
 
 Encode/decode base64 data into ArrayBuffers
 
-## Getting Started
-Install the module with: `npm install base64-arraybuffer`
+### Installing
+You can install the module via npm:
 
+    npm install base64-arraybuffer
+  
 ## API
 The library encodes and decodes base64 to and from ArrayBuffers
 
  - __encode(buffer)__ - Encodes `ArrayBuffer` into base64 string
  - __decode(str)__ - Decodes base64 string to `ArrayBuffer`
+
+### Testing
+You can run the test suite with:
+
+    npm test
 
 ## License
 Copyright (c) 2012 Niklas von Hertzen
