@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-bitwise": false,
+    "member-access": false,
+    "no-conditional-assignment": false,
+    "one-variable-per-declaration": false,
+    "no-empty": false,
+    "prefer-const": false,
+    "prefer-conditional-expression": false,
+    "member-ordering": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "variable-name": false,
+    "ban-comma-operator": false
+  }
+}

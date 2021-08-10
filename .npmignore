@@ -1,4 +1,10 @@
-/node_modules/
-package-lock.json
+src/
+test/
+scripts/
+.github/
+.npmignore
+.prettierrc
+tslint.json
+tsconfig.json
 .travis.yml
-/test/
+.rpt2_cache
