@@ -2,5 +2,5 @@
 node_modules/
 *.idea
 *.iml
-test/
+dist/
 npm-debug.log

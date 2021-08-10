@@ -1,6 +1,6 @@
 # base64-arraybuffer
 
-[![Build Status](https://travis-ci.org/niklasvh/base64-arraybuffer.png)](https://travis-ci.org/niklasvh/base64-arraybuffer)
+![CI](https://github.com/niklasvh/base64-arraybuffer/workflows/CI/badge.svg?branch=master)
 [![NPM Downloads](https://img.shields.io/npm/dm/base64-arraybuffer.svg)](https://www.npmjs.org/package/base64-arraybuffer)
 [![NPM Version](https://img.shields.io/npm/v/base64-arraybuffer.svg)](https://www.npmjs.org/package/base64-arraybuffer)
 
