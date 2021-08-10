@@ -1,7 +1,7 @@
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 // Use a lookup table to find the index.
-const lookup = new Uint8Array(256);
+const lookup = typeof Uint8Array === 'undefined' ? [] : new Uint8Array(256);
 for (let i = 0; i < chars.length; i++) {
     lookup[chars.charCodeAt(i)] = i;
 }
