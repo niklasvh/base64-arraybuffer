@@ -4,7 +4,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/base64-arraybuffer.svg)](https://www.npmjs.org/package/base64-arraybuffer)
 [![NPM Version](https://img.shields.io/npm/v/base64-arraybuffer.svg)](https://www.npmjs.org/package/base64-arraybuffer)
 
-Encode/decode base64 data into ArrayBuffers
+Encode/decode base64 or base64url data into ArrayBuffers.
 
 ### Installing
 You can install the module via npm:
@@ -12,10 +12,13 @@ You can install the module via npm:
     npm install base64-arraybuffer
   
 ## API
-The library encodes and decodes base64 to and from ArrayBuffers
+The library encodes and decodes base64/base64url to and from ArrayBuffers
 
  - __encode(buffer)__ - Encodes `ArrayBuffer` into base64 string
  - __decode(str)__ - Decodes base64 string to `ArrayBuffer`
+
+ - __encode(buffer, true)__ - Encodes `ArrayBuffer` into base64url string
+ - __decode(str, true)__ - Decodes base64url string to `ArrayBuffer`
 
 ### Testing
 You can run the test suite with:
