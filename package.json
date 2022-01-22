@@ -4,7 +4,7 @@
   "main": "dist/base64-arraybuffer.umd.js",
   "module": "dist/base64-arraybuffer.es5.js",
   "typings": "dist/types/index.d.ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/niklasvh/base64-arraybuffer",
   "author": {
     "name": "Niklas von Hertzen",
